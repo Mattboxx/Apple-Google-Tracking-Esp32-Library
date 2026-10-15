@@ -11,10 +11,10 @@
       "maintainer": true
     }
   ],
-  "homepage": "https://github.com/mattbox03/Find_My_adv_ESP_library",
+  "homepage": "https://github.com/Mattboxx/Apple-Google-Tracking-Esp32-Library",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mattbox03/Find_My_adv_ESP_library.git"
+    "url": "https://github.com/Mattboxx/Apple-Google-Tracking-Esp32-Library.git"
   },
   "frameworks": ["arduino"],
   "platforms": ["espressif32"],
