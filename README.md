@@ -1,4 +1,4 @@
-# FindMyAdv
+# FindMyAdv — Apple Find My + Google Find Hub for ESP32
 
 Reusable Apple Find My and Google Find Hub BLE advertising for Arduino on
 BLE-capable ESP32 chips. Add one `begin()` call to an existing firmware; the
@@ -50,7 +50,7 @@ that host, at a substantially higher memory cost.
 Install the library directly from its public GitHub repository:
 
 ```ini
-lib_deps = https://github.com/mattbox03/Find_My_adv_ESP_library.git
+lib_deps = https://github.com/Mattboxx/Apple-Google-Tracking-Esp32-Library.git
 ```
 
 That is the only project dependency to add. The FindMyAdv manifest resolves
@@ -64,7 +64,7 @@ ESP32, ESP32-C3, and ESP32-S3 can use the stable PlatformIO platform:
 platform = espressif32@7.0.1
 board = esp32-c3-devkitm-1
 framework = arduino
-lib_deps = https://github.com/mattbox03/Find_My_adv_ESP_library.git
+lib_deps = https://github.com/Mattboxx/Apple-Google-Tracking-Esp32-Library.git
 ```
 
 ESP32-C6 needs an Arduino-ESP32 3.x platform. This configuration is tested:
@@ -76,7 +76,7 @@ platform_packages =
     framework-arduinoespressif32 @ https://github.com/espressif/arduino-esp32/releases/download/3.3.9/esp32-core-3.3.9.tar.xz
 board = esp32-c6-devkitc-1
 framework = arduino
-lib_deps = https://github.com/mattbox03/Find_My_adv_ESP_library.git
+lib_deps = https://github.com/Mattboxx/Apple-Google-Tracking-Esp32-Library.git
 ```
 
 On a Windows machine that has already installed Arduino-ESP32 2.x, PlatformIO

@@ -30,7 +30,7 @@ manifest while packing it.
 
 ## 3. Publish GitHub source
 
-Use the public `mattbox03/Find_My_adv_ESP_library` repository, push the verified source,
+Use the public `Mattboxx/Apple-Google-Tracking-Esp32-Library` repository, push the verified source,
 tag the same version, and attach the generated archive to the release. Do not
 commit the personal `FindMyAdv-configured.zip` produced by Find_My_Web.
 
@@ -39,7 +39,7 @@ commit the personal `FindMyAdv-configured.zip` produced by Find_My_Web.
 From a clean PlatformIO project, reference the public repository:
 
 ```ini
-lib_deps = https://github.com/mattbox03/Find_My_adv_ESP_library.git
+lib_deps = https://github.com/Mattboxx/Apple-Google-Tracking-Esp32-Library.git
 ```
 
 Build that project to verify the tagged GitHub source can be installed without

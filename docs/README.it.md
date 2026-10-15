@@ -22,7 +22,7 @@ una radio Bluetooth.
 Con PlatformIO puoi installare direttamente la libreria pubblica:
 
 ```ini
-lib_deps = https://github.com/mattbox03/Find_My_adv_ESP_library.git
+lib_deps = https://github.com/Mattboxx/Apple-Google-Tracking-Esp32-Library.git
 ```
 
 È l'unica dipendenza da dichiarare. Il manifest installa automaticamente
@@ -39,7 +39,7 @@ platform_packages =
     framework-arduinoespressif32 @ https://github.com/espressif/arduino-esp32/releases/download/3.3.9/esp32-core-3.3.9.tar.xz
 board = esp32-c6-devkitc-1
 framework = arduino
-lib_deps = https://github.com/mattbox03/Find_My_adv_ESP_library.git
+lib_deps = https://github.com/Mattboxx/Apple-Google-Tracking-Esp32-Library.git
 ```
 
 Se su Windows è già presente Arduino-ESP32 2.x, PlatformIO può riutilizzare
