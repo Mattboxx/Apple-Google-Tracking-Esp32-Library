@@ -12,8 +12,14 @@ module, and a later `begin()` starts it again.
 FindMyAdv is an unofficial, open-source interoperability project. It is not
 affiliated with or endorsed by Apple, Google, or Espressif.
 
-Italian documentation: [`docs/README.it.md`](docs/README.it.md)  
 Complete API reference: [`docs/API.md`](docs/API.md)
+
+<details>
+<summary>Italian documentation</summary>
+
+[`Guida italiana`](docs/README.it.md). English is the primary documentation language.
+
+</details>
 
 Additional references:
 
