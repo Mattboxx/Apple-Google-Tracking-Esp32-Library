@@ -1,4 +1,15 @@
-# FindMyAdv — guida italiana
+# TagRelayLab ESP32 Library — guida FindMyAdv
+
+Esperimento comunitario di interoperabilità, senza abbonamento, funzionalità a
+pagamento o server centrale obbligatorio del progetto. Il sostegno su
+[Ko-fi](https://ko-fi.com/mattboxx) è facoltativo. Apple Find My e Google Find Hub
+sono citati soltanto per descrivere l'interoperabilità non ufficiale; i loro
+servizi cloud restano necessari. Non è un accessorio certificato.
+
+Si integra nei firmware Arduino esistenti su ESP32 **con BLE supportato**, non
+su qualunque ESP: ESP8266 e ESP32-S2 non hanno BLE. Restano validi i limiti dello
+stack e della risorsa advertising condivisa. Non usare per tracciamento occulto
+o non autorizzato. Il nome tecnico, gli include e le API restano `FindMyAdv`.
 
 FindMyAdv è una libreria Arduino riutilizzabile che aggiunge l'advertising BLE
 Apple Find My e Google Find Hub a un firmware ESP32 già esistente. La libreria
@@ -22,7 +33,7 @@ una radio Bluetooth.
 Con PlatformIO puoi installare direttamente la libreria pubblica:
 
 ```ini
-lib_deps = https://github.com/Mattboxx/Apple-Google-Tracking-Esp32-Library.git
+lib_deps = https://github.com/Mattboxx/TagRelayLab-ESP32-Library.git
 ```
 
 È l'unica dipendenza da dichiarare. Il manifest installa automaticamente
@@ -39,7 +50,7 @@ platform_packages =
     framework-arduinoespressif32 @ https://github.com/espressif/arduino-esp32/releases/download/3.3.9/esp32-core-3.3.9.tar.xz
 board = esp32-c6-devkitc-1
 framework = arduino
-lib_deps = https://github.com/Mattboxx/Apple-Google-Tracking-Esp32-Library.git
+lib_deps = https://github.com/Mattboxx/TagRelayLab-ESP32-Library.git
 ```
 
 Se su Windows è già presente Arduino-ESP32 2.x, PlatformIO può riutilizzare

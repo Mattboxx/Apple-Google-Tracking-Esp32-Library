@@ -1,4 +1,6 @@
-# FindMyAdv — Apple Find My + Google Find Hub for ESP32
+# TagRelayLab ESP32 Library — FindMyAdv
+
+**Experimental BLE advertising for existing Arduino firmware on supported ESP32 boards.**
 
 Reusable Apple Find My and Google Find Hub BLE advertising for Arduino on
 BLE-capable ESP32 chips. Add one `begin()` call to an existing firmware; the
@@ -11,6 +13,19 @@ module, and a later `begin()` starts it again.
 
 FindMyAdv is an unofficial, open-source interoperability project. It is not
 affiliated with or endorsed by Apple, Google, or Espressif.
+
+Part of **TagRelayLab**, a community interoperability experiment, not an official
+network accessory or a hosted tracking service. There is no required project-run
+central server, subscription or payment. Optional [Ko-fi support](https://ko-fi.com/mattboxx)
+helps development and does not unlock features or grant network certification.
+Apple Find My and Google Find Hub are referenced only to describe the unofficial
+interoperability being explored; their accounts, services and terms remain separate.
+Do not use the library for covert or unauthorized tracking.
+
+Integrate it into existing Arduino firmware on **supported BLE-capable ESP32**
+chips. It is not compatible with every ESP or every BLE stack: ESP8266 and
+ESP32-S2 lack BLE, and another module cannot simultaneously own the same legacy
+advertising resource. Your application and its keys stay under your control.
 
 Complete API reference: [`docs/API.md`](docs/API.md)
 
@@ -56,7 +71,7 @@ that host, at a substantially higher memory cost.
 Install the library directly from its public GitHub repository:
 
 ```ini
-lib_deps = https://github.com/Mattboxx/Apple-Google-Tracking-Esp32-Library.git
+lib_deps = https://github.com/Mattboxx/TagRelayLab-ESP32-Library.git
 ```
 
 That is the only project dependency to add. The FindMyAdv manifest resolves
@@ -70,7 +85,7 @@ ESP32, ESP32-C3, and ESP32-S3 can use the stable PlatformIO platform:
 platform = espressif32@7.0.1
 board = esp32-c3-devkitm-1
 framework = arduino
-lib_deps = https://github.com/Mattboxx/Apple-Google-Tracking-Esp32-Library.git
+lib_deps = https://github.com/Mattboxx/TagRelayLab-ESP32-Library.git
 ```
 
 ESP32-C6 needs an Arduino-ESP32 3.x platform. This configuration is tested:
@@ -82,7 +97,7 @@ platform_packages =
     framework-arduinoespressif32 @ https://github.com/espressif/arduino-esp32/releases/download/3.3.9/esp32-core-3.3.9.tar.xz
 board = esp32-c6-devkitc-1
 framework = arduino
-lib_deps = https://github.com/Mattboxx/Apple-Google-Tracking-Esp32-Library.git
+lib_deps = https://github.com/Mattboxx/TagRelayLab-ESP32-Library.git
 ```
 
 On a Windows machine that has already installed Arduino-ESP32 2.x, PlatformIO
