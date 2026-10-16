@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased — Lifecycle regression
+
+- Drain the previous scheduler before restarting with `begin()` after `end()`.
+  Previously an immediate restart could reset the stop request and leave two
+  scheduler tasks active. The same bounded shutdown path serves `reconfigure()`.
+- Add host-side regression tests compiling the real implementation against fake
+  FreeRTOS/BLE calls, covering repeated restart and switching to manual polling.
+- No API, package version, radio payload, key or existing release-tag changes.
+
 All notable changes to FindMyAdv are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses
 [Semantic Versioning](https://semver.org/).
