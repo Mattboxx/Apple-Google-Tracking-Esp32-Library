@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased — Publication consistency
+
+- Align Arduino's NimBLE dependency range with PlatformIO (`>=2.5.0 && <3.0.0`).
+- Distinguish CI-built targets from experimental, unverified chips; retain all
+  code paths without promising on-air verification or certification.
+- Explain immutable release tags and commit-pinned snapshots. Keep FindMyAdv
+  version 1.1.0 and its implementation/API unchanged.
+
 ## Unreleased — Lifecycle regression
 
 - Drain the previous scheduler before restarting with `begin()` after `end()`.

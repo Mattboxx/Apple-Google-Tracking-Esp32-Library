@@ -52,12 +52,14 @@ Additional references:
 | ESP32-C3 | BLE 5 | NimBLE-Arduino | Supported |
 | ESP32-S3 | BLE 5 | NimBLE-Arduino | Supported |
 | ESP32-C6 | BLE 5 | NimBLE-Arduino | Supported |
-| ESP32-C2 | BLE 5 | NimBLE-Arduino | Compatible; not yet in the release build matrix |
-| ESP32-C5 / ESP32-C61 | BLE | NimBLE-Arduino | Compatible; requires a supporting Arduino core |
-| ESP32-H2 | BLE 5 | NimBLE-Arduino | Compatible; build with a supporting Arduino core |
+| ESP32-C2 | BLE 5 | NimBLE-Arduino | Experimental; not yet verified in this project's build matrix |
+| ESP32-C5 / ESP32-C61 | BLE | NimBLE-Arduino | Experimental; not yet verified; needs a supporting core and BLE stack |
+| ESP32-H2 | BLE 5 | NimBLE-Arduino | Experimental; not yet verified; needs a supporting core and BLE stack |
 | ESP8266 / ESP32-S2 / ESP32-P4 | No Bluetooth radio | — | Not possible |
 
-The current standalone firmware validates the ESP32, C3, S3, and C6 targets.
+The current CI compiles the ESP32, C3, S3 and C6 targets and runs host-side
+lifecycle tests. This is not on-air verification of every board or accessory
+certification. Untested targets are possibilities, not a compatibility guarantee.
 The default backend uses NimBLE-Arduino and calls its raw GAP advertiser
 directly. The higher-level scanner, client, server, security, and advertising
 object APIs are not used. A legacy Bluedroid compatibility backend remains
@@ -75,7 +77,7 @@ lib_deps = https://github.com/Mattboxx/TagRelayLab-ESP32-Library.git
 ```
 
 That is the only project dependency to add. The FindMyAdv manifest resolves
-its single external dependency, `NimBLE-Arduino >= 2.5.0`, automatically. Do
+its single external dependency, `NimBLE-Arduino >= 2.5.0 and < 3.0.0`, automatically. Do
 not also install the old Arduino `ESP32 BLE Arduino` library.
 
 ESP32, ESP32-C3, and ESP32-S3 can use the stable PlatformIO platform:

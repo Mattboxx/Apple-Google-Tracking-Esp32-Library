@@ -34,6 +34,8 @@ jobs:
           python-version: "3.12"
       - name: Test scheduler lifecycle without hardware
         run: python test/check_lifecycle.py
+      - name: Check publication metadata consistency
+        run: python test/check_metadata.py
       - run: python -m pip install platformio==6.1.19
       - run: pio pkg pack . --output FindMyAdv.tar.gz
       - uses: actions/upload-artifact@v7
