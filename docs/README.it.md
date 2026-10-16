@@ -22,8 +22,10 @@ Apple, Google o Espressif.
 ## Compatibilità
 
 Sono verificati ESP32 classico, ESP32-C3, ESP32-S3 ed ESP32-C6. Il backend
-predefinito usa NimBLE-Arduino e il GAP a basso livello; ESP32-C2, C5, C61 e H2
-sono compatibili quando il relativo core Arduino supporta il chip. Bluedroid
+predefinito usa NimBLE-Arduino e il GAP a basso livello. ESP32-C2, C5, C61 e H2
+restano sperimentali e non ancora verificati nella matrice del progetto: servono
+un core e uno stack BLE compatibili. La CI verifica la compilazione e il ciclo di
+vita su host, non la trasmissione radio di ogni PCB o una certificazione. Bluedroid
 rimane soltanto un'opzione di compatibilità, più pesante.
 ESP8266, ESP32-S2 ed ESP32-P4 non possono essere supportati perché non hanno
 una radio Bluetooth.
@@ -37,7 +39,7 @@ lib_deps = https://github.com/Mattboxx/TagRelayLab-ESP32-Library.git
 ```
 
 È l'unica dipendenza da dichiarare. Il manifest installa automaticamente
-`NimBLE-Arduino >= 2.5.0`; non aggiungere la vecchia libreria `ESP32 BLE
+`NimBLE-Arduino >= 2.5.0 e < 3.0.0`; non aggiungere la vecchia libreria `ESP32 BLE
 Arduino`.
 
 ESP32, ESP32-C3 ed ESP32-S3 possono usare `espressif32@7.0.1`. Per ESP32-C6
