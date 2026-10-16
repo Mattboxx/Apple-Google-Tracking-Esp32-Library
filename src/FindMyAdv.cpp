@@ -435,6 +435,15 @@ bool FindMyAdvClass::begin(const FindMyAdvConfig &configuration) {
         return false;
     }
 
+    // end() requests asynchronous task shutdown. Drain that task before
+    // resetting stopRequested or overwriting its handle on a new begin().
+    const uint32_t waitStarted = millis();
+    while (schedulerTask && millis() - waitStarted < 1000) delay(10);
+    if (schedulerTask) {
+        vTaskDelete(schedulerTask);
+        schedulerTask = nullptr;
+    }
+
     cfg = configuration;
     copyKey(appleText, cfg.appleAdvertisementKeyBase64);
     copyKey(googleText, cfg.googleAdvertisementEidHex);
@@ -521,12 +530,6 @@ bool FindMyAdvClass::reconfigure(const FindMyAdvConfig &configuration) {
     next.googleAdvertisementEidHex = nextGoogle;
 
     end();
-    const uint32_t waitStarted = millis();
-    while (schedulerTask && millis() - waitStarted < 1000) delay(10);
-    if (schedulerTask) {
-        vTaskDelete(schedulerTask);
-        schedulerTask = nullptr;
-    }
     return begin(next);
 }
 

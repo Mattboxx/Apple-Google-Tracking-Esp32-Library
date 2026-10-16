@@ -33,6 +33,11 @@ when neither key is valid, BLE initialization fails, or the task cannot start.
 Calling `begin()` while already running is a no-op that returns `true`. Use
 `reconfigure()` to replace a live configuration.
 
+After `end()`, an immediate `begin()` waits for the previous private scheduler
+to exit before starting a replacement, including when switching to manual
+polling. Shutdown waiting is bounded at one second; no second task is created
+while the old task is still present. Serialize lifecycle calls in your application.
+
 ### `bool reconfigure(const FindMyAdvConfig &config)`
 
 Stops advertising, safely copies the new configuration, and restarts the
